@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "5237fe31-14f0-4acc-a34b-f894298c3779",
+		"name": "AWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22554031"
+	},
+	"item": [
+		{
+			"name": "S3 Bucket Test",
+			"item": [
+				{
+					"name": "List Objects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/uploads/list-file",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"uploads",
+								"list-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ASUS/OneDrive/Desktop/Profile Icon/car3.jpeg"
+								},
+								{
+									"key": "folder",
+									"value": "mani",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/uploads/file-upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"uploads",
+								"file-upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"mani/car3.jpeg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/uploads/delete-object",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"uploads",
+								"delete-object"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Firebase Storage Test",
+			"item": []
+		},
+		{
+			"name": "Sharp",
+			"item": [
+				{
+					"name": "Upload Sharp File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ASUS/OneDrive/Desktop/Profile Icon/compressed.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}sharp/upload-image",
+							"host": [
+								"{{URL}}sharp"
+							],
+							"path": [
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
